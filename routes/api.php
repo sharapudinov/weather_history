@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use AvtoDev\JsonRpc\RpcRouter;
 
@@ -15,12 +14,6 @@ use AvtoDev\JsonRpc\RpcRouter;
 |
 */
 
-Route::middleware('auth:api')->get(
-    '/user',
-    function (Request $request) {
-        return $request->user();
-    }
-);
 RpcRouter::on('weather.getHistory', 'App\\Http\\Controllers\\WeatherHistoryRpcController@getHistory');
 RpcRouter::on('weather.getByDate', 'App\\Http\\Controllers\\WeatherHistoryRpcController@getByDate');
 RpcRouter::on('weather.getById', 'App\\Http\\Controllers\\WeatherHistoryRpcController@show');
